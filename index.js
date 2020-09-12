@@ -64,32 +64,6 @@ client.on('message', async msg => {
         }
     }
 
-
-    switch (msg.author.id) {
-        case '327365815785619457': //Gagan
-            if (rand == 100) {
-                msg.reply("gift card please");
-            }
-            break;
-        case '252653111414358016': //Pavan
-            if (rand == 100) {
-                msg.reply("It's Pawan, not Pavan.");
-            }
-            break;
-        case '240542597540610048': //Asli
-            if (rand == 100) {
-                msg.reply("Please fuck off.");
-            }
-            break;
-        default:
-            break;
-    }
-    // if (msg.author.id == "252653111414358016") {
-    //     if (Math.floor((Math.random() * 100) + 1) == 100) {
-    //         msg.reply("It's Pawan, not Pavan.");
-    //     }
-    // }
-
 });
 
 client.login(process.env.AUTH_TOKEN);
