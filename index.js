@@ -2,6 +2,7 @@ require('dotenv').config({ path: __dirname + '/.env' })
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const users = require('./retards.config')
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);

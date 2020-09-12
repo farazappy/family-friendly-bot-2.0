@@ -11,3 +11,16 @@
 //  Pudding         290753800665300992        109118897 / 76561198069384625
 //  Rishabh              -dead-                         -dead-
 //  Capone            -irrelevant-                   -irrelevant-
+
+module.exports = {
+    appy: {
+        discord: 240542597540610048,
+        steam32: 82290636,
+        steam64: 76561198042556364
+    },
+    moiz: {
+        discord: 310860262624460801,
+        steam32: 319083584,
+        steam64: 76561198279349312
+    }
+}
