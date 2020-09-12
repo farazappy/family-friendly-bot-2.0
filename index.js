@@ -32,7 +32,7 @@ client.on('message', async msg => {
     const content = msg.content.substring(1, msg.content.length)
 
     if (content === 'ping') {
-        msg.reply('bong aeysha');
+        msg.reply('pong');
     }
 
     if (content.includes("password")) {
