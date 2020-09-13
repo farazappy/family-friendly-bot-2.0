@@ -41,7 +41,13 @@ client.on('message', async msg => {
     }
 
     if (message.content === 'appy') {
+        message.react('485140905192325155');
+        message.react('s');
+        message.react('e');
+        message.react('x');
+        message.react('y');
         message.react(':sweat_drops:');
+
     }
 
     if (content === 'myrank') {
