@@ -64,7 +64,6 @@ client.on('message', async msg => {
         }
     }
 
-
     switch (msg.author.id) {
         case '327365815785619457': //Gagan
             if (rand == 100) {
