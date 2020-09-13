@@ -40,6 +40,10 @@ client.on('message', async msg => {
         msg.reply("IT Cell will take it from here. Thank you.");
     }
 
+    if (message.content === 'appy') {
+        message.react(':sweat_drops:');
+    }
+
     if (content === 'myrank') {
         if (users.hasOwnProperty(msg.author.id)) {
             await axiosInstance.get(`/players/${users[msg.author.id].steam32}`).then((r) => {
