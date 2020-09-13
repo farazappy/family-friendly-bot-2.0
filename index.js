@@ -42,11 +42,11 @@ client.on('message', async msg => {
 
     if (message.content === 'appy') {
         message.react('485140905192325155');
-        message.react(':regional_indicator_s:');
-        message.react(':regional_indicator_e:');
-        message.react(':regional_indicator_x:');
-        message.react(':regional_indicator_y:');:regional_indicator_y: 
-        message.react(':sweat_drops:');
+        message.react('�');
+        message.react('�');
+        message.react('�');
+        message.react('�'); 
+        message.react('�');
 
     }
 
