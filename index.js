@@ -3,6 +3,7 @@ require('dotenv').config({ path: __dirname + '/.env' })
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const axios = require('axios');
+const dota = require('./dota');
 const users = require('./retards.config');
 const ranks = require('./ranks.config');
 const openDotaKey = process.env.OPEN_DOTA_KEY;
