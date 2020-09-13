@@ -1,23 +1,17 @@
-require('dotenv').config({ path: __dirname + '/.env' })
-
-const Discord = require('discord.js');
-const client = new Discord.Client();
+require('./dota')
 const axios = require('axios');
-const users = require('./retards.config');
-const ranks = require('./ranks.config');
-const openDotaKey = process.env.OPEN_DOTA_KEY;
 const axiosInstance = axios.create({
     baseURL: 'https://api.opendota.com/api/',
 });
 
-function tierToRank (tier) {
-    const medal = tier.toString().charAt(0);
-    const star = tier.toString().charAt(1);
+require('dotenv').config({ path: __dirname + '/.env' })
 
-    return `${ranks[medal]} ${star}`
-    // console.log(ranks[medal]);
-    // console.log(tier.toString().charAt(0));
-}
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const dota = require('./dota');
+const users = require('./retards.config');
+const ranks = require('./ranks.config');
+const openDotaKey = process.env.OPEN_DOTA_KEY;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -37,6 +31,14 @@ client.on('message', async msg => {
 
     if (content.includes("password")) {
         msg.reply("IT Cell will take it from here. Thank you.");
+    }
+
+    if (content === 'appy') {
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'));
+    }
+
+    if (content.includes('asli')) {
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'));
     }
 
     if (content === 'myrank') {
@@ -64,30 +66,14 @@ client.on('message', async msg => {
         }
     }
 
-    switch (msg.author.id) {
-        case '327365815785619457': //Gagan
-            if (rand == 100) {
-                msg.reply("gift card please");
-            }
-            break;
-        case '252653111414358016': //Pavan
-            if (rand == 100) {
-                msg.reply("It's Pawan, not Pavan.");
-            }
-            break;
-        case '240542597540610048': //Asli
-            if (rand == 100) {
-                msg.reply("Please fuck off.");
-            }
-            break;
-        default:
-            break;
+    if (content === 'allranks') {
+        let ranks = await allRanks()
+        const ranksEmbed = new Discord.MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('Ranks of Retards')
+            .addFields(ranks);
+        msg.channel.send(ranksEmbed)
     }
-    // if (msg.author.id == "252653111414358016") {
-    //     if (Math.floor((Math.random() * 100) + 1) == 100) {
-    //         msg.reply("It's Pawan, not Pavan.");
-    //     }
-    // }
 
 });
 
