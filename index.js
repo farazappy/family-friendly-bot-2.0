@@ -46,10 +46,20 @@ client.on('message', async msg => {
             msg.reply("Sorry, you are not admin.")
             return
         } else {
-            delQueenTxt = !delQueenTxt;
+            delQueenTxt = true;
             msg.reply("Roger that Sir!");
         }
+    }
 
+
+    if (content === 'feminism') {
+        if (!admins.includes(msg.author.id)) {
+            msg.reply("Sorry, you are not admin.")
+            return
+        } else {
+            delQueenTxt = false;
+            msg.reply("Chalo theek hai!");
+        }
     }
 
     // if (content === 'ping') {
