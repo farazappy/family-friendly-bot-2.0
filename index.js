@@ -71,25 +71,30 @@ client.on('message', async msg => {
     }
 
     if (content === 'ayesha') {
-        msg.react('�');
-        msg.react('�');//c
-        msg.react('�');//h
-        msg.react('�');//u
-        msg.react('�');//d
-        msg.react('�');//a
-        msg.react('�');//i
-        msg.react('�');//l
-        msg.react('�');
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'japanese_goblin'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_c'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_h'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_u'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_d'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_a'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_i'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_l'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'japanese_ogre'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_lk'));
+        
     }
     if (content === 'appy') {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
-        msg.react('�');
-        msg.react('�');
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'eggplant'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'sweat_drops'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_bd'))
+        
     }
 
     if (content.includes('asli')) {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'));
-        msg.react('725797840751689770');
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'skull'))
     }
 
     if (content === 'myrank') {
