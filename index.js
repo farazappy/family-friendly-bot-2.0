@@ -33,12 +33,26 @@ client.on('message', async msg => {
         msg.reply("IT Cell will take it from here. Thank you.");
     }
 
+    if (content === 'ayesha') {
+        message.react('�');
+        message.react('�');//c
+        message.react('�');//h
+        message.react('�');//u
+        message.react('�');//d
+        message.react('�');//a
+        message.react('�');//i
+        message.react('�');//l
+        message.react('�');
+    }
     if (content === 'appy') {
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'));
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
+        message.react('�');
+        message.react('�');
     }
 
     if (content.includes('asli')) {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'));
+        message.react('725797840751689770');
     }
 
     if (content === 'myrank') {
