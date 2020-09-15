@@ -25,7 +25,7 @@ client.on('message', async msg => {
 
     if (delQueenTxt) {
         if (msg.member.roles.cache.some(role => role.name === 'Q U E E N S'))
-            msg.delete({ timeout: 5000 })
+            msg.delete({ timeout: 2000 })
                 .then(m => {
                     console.log(`Deleted message from ${m.author.username} after 5 seconds`)
                     msg.channel.send('Power to <@&753249814350790776>!');
@@ -41,7 +41,7 @@ client.on('message', async msg => {
     const rand = Math.floor((Math.random() * 100) + 1) == 100;
     const content = msg.content.substring(1, msg.content.length)
 
-    if (content === 'now') {
+    if (content === 'patriarchy') {
         if (!admins.includes(msg.author.id)) {
             msg.reply("Sorry, you are not admin.")
             return
