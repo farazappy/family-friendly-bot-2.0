@@ -87,14 +87,14 @@ client.on('message', async msg => {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'eggplant'))
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'sweat_drops'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_bd'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_bd'));
         
     }
 
     if (content.includes('asli')) {
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'));
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'))
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'skull'))
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'skull'));
     }
 
     if (content === 'myrank') {
