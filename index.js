@@ -34,25 +34,25 @@ client.on('message', async msg => {
     }
 
     if (content === 'ayesha') {
-        message.react('�');
-        message.react('�');//c
-        message.react('�');//h
-        message.react('�');//u
-        message.react('�');//d
-        message.react('�');//a
-        message.react('�');//i
-        message.react('�');//l
-        message.react('�');
+        msg.react('�');
+        msg.react('�');//c
+        msg.react('�');//h
+        msg.react('�');//u
+        msg.react('�');//d
+        msg.react('�');//a
+        msg.react('�');//i
+        msg.react('�');//l
+        msg.react('�');
     }
     if (content === 'appy') {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
-        message.react('�');
-        message.react('�');
+        msg.react('�');
+        msg.react('�');
     }
 
     if (content.includes('asli')) {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'));
-        message.react('725797840751689770');
+        msg.react('725797840751689770');
     }
 
     if (content === 'myrank') {
