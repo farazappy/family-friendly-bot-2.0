@@ -13,11 +13,24 @@ const users = require('./retards.config');
 const ranks = require('./ranks.config');
 const openDotaKey = process.env.OPEN_DOTA_KEY;
 
+const admins = ['240542597540610048', '310860262624460801'];
+
+var delQueenTxt = false;
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', async msg => {
+
+    if (delQueenTxt) {
+        if (msg.member.roles.cache.some(role => role.name === 'Q U E E N S'))
+            msg.delete({ timeout: 5000 })
+                .then(msg => console.log(`Deleted message from ${msg.author.username} after 5 seconds`))
+                .catch(console.error);
+    }
+
+
     if (msg.content.charAt(0) != '>') {
         return
     }
@@ -25,9 +38,18 @@ client.on('message', async msg => {
     const rand = Math.floor((Math.random() * 100) + 1) == 100;
     const content = msg.content.substring(1, msg.content.length)
 
-    if (content === 'ping') {
-        msg.reply('pong');
+    if (content === 'now') {
+        if (!admins.includes(msg.author.id)) {
+            msg.reply("Sorry, you are not admin.")
+        }
+
+        delQueenTxt = !delQueenTxt;
+        msg.reply("Roger that Sir!");
     }
+
+    // if (content === 'ping') {
+    //     msg.reply('pong');
+    // }
 
     if (content.includes("password")) {
         msg.reply("IT Cell will take it from here. Thank you.");
