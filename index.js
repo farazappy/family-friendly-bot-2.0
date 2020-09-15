@@ -28,7 +28,7 @@ client.on('message', async msg => {
             msg.delete({ timeout: 2000 })
                 .then(m => {
                     console.log(`Deleted message from ${m.author.username} after 5 seconds`)
-                    msg.channel.send('Power to <@&753249814350790776>!');
+                    // msg.channel.send('Power to <@&753249814350790776>!');
                 })
                 .catch(console.error);
     }
