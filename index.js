@@ -26,7 +26,10 @@ client.on('message', async msg => {
     if (delQueenTxt) {
         if (msg.member.roles.cache.some(role => role.name === 'Q U E E N S'))
             msg.delete({ timeout: 5000 })
-                .then(msg => console.log(`Deleted message from ${msg.author.username} after 5 seconds`))
+                .then(m => {
+                    console.log(`Deleted message from ${m.author.username} after 5 seconds`)
+                    msg.channel.send('Power to <@&753249814350790776>!');
+                })
                 .catch(console.error);
     }
 
@@ -41,10 +44,12 @@ client.on('message', async msg => {
     if (content === 'now') {
         if (!admins.includes(msg.author.id)) {
             msg.reply("Sorry, you are not admin.")
+            return
+        } else {
+            delQueenTxt = !delQueenTxt;
+            msg.reply("Roger that Sir!");
         }
 
-        delQueenTxt = !delQueenTxt;
-        msg.reply("Roger that Sir!");
     }
 
     // if (content === 'ping') {
