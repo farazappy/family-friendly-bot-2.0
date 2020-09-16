@@ -67,7 +67,6 @@ client.on('message', async msg => {
             msg.reply("Kya bola be MULLE :dagger:")
             return
         } else {
-            delQueenTxt = false;
             msg.reply("Hello Friend :pray_tone2: :) ");
         }
     }
