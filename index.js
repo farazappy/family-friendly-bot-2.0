@@ -13,7 +13,7 @@ const users = require('./retards.config');
 const ranks = require('./ranks.config');
 const openDotaKey = process.env.OPEN_DOTA_KEY;
 
-const admins = ['240542597540610048', '310860262624460801'];
+const admins = ['240542597540610048', '310860262624460801', '202035944260370441'];
 
 var delQueenTxt = false;
 
@@ -62,6 +62,40 @@ client.on('message', async msg => {
         }
     }
 
+    if (content === "mute") {
+        if (!admins.includes(msg.author.id)) {
+            msg.reply("Sorry, you are not admin.")
+            return
+        } else {
+            // msg.member.voice.setDeaf(true, "Game starting");
+            // msg.member.voice.setMute(true, "Game starting");
+            msg.member.voice.channel.members.forEach((m) => {
+                if (m.roles.cache.some(role => role.name === 'Groovy'))
+                    return;
+                m.voice.setMute(true, "Game Starating");
+            });
+            // msg.member.guild.voiceStates.cache.forEach((c) => {
+            //     if (msg.member.voice.channelID === c.channelID)
+            //         c.setMute(true, "Game Starting");
+            // });
+        }
+    }
+
+    if (content === "unmute") {
+        if (!admins.includes(msg.author.id)) {
+            msg.reply("Sorry, you are not admin.")
+            return
+        } else {
+            // msg.member.voice.setDeaf(false, "Voting round");
+            // msg.member.voice.setMute(false, "Voting round");
+            msg.member.voice.channel.members.forEach((m) => {
+                if (m.roles.cache.some(role => role.name === 'Groovy'))
+                    return;
+                m.voice.setMute(false, "Voting round");
+            });
+        }
+    }
+
     // if (content === 'ping') {
     //     msg.reply('pong');
     // }
@@ -71,31 +105,37 @@ client.on('message', async msg => {
     }
 
     if (content === 'ayesha') {
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'japanese_goblin'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_c'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_h'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_u'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_d'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_a'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_i'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_l'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'japanese_ogre'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_lk'));
-        
+        msg.react('👺')
+        msg.react(String.fromCodePoint("C".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react(String.fromCodePoint("H".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react(String.fromCodePoint("U".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react(String.fromCodePoint("D".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react(String.fromCodePoint("A".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react(String.fromCodePoint("I".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react(String.fromCodePoint("L".codePointAt(0) - 65 + 0x1f1e6))
+        msg.react('👹')
+        msg.react('🇱🇰')
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_c'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_h'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_u'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_d'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_a'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_i'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'regional_indicator_l'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'japanese_ogre'))
+        // msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_lk'));
+
     }
     if (content === 'appy') {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'eggplant'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'sweat_drops'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'flag_bd'));
-        
+
     }
 
     if (content.includes('asli')) {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'skull'));
+        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'sadsli'));
     }
+
 
     if (content === 'myrank') {
         if (users.hasOwnProperty(msg.author.id)) {
