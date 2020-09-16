@@ -13,7 +13,7 @@ const users = require('./retards.config');
 const ranks = require('./ranks.config');
 const openDotaKey = process.env.OPEN_DOTA_KEY;
 
-const admins = ['240542597540610048', '310860262624460801', '202035944260370441'];
+const admins = ['240542597540610048', '310860262624460801', '202035944260370441', '202744505114296331'];
 
 var delQueenTxt = false;
 
