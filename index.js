@@ -72,7 +72,7 @@ client.on('message', async msg => {
             msg.member.voice.channel.members.forEach((m) => {
                 if (m.roles.cache.some(role => role.name === 'Groovy'))
                     return;
-                m.voice.setMute(true, "Game Starating");
+                m.voice.setMute(true, "Game Starting");
             });
             // msg.member.guild.voiceStates.cache.forEach((c) => {
             //     if (msg.member.voice.channelID === c.channelID)
