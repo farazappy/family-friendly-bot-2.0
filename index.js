@@ -13,7 +13,7 @@ const users = require('./retards.config');
 const ranks = require('./ranks.config');
 const openDotaKey = process.env.OPEN_DOTA_KEY;
 
-const admins = ['240542597540610048', '310860262624460801', '202035944260370441'];
+const admins = ['240542597540610048', '310860262624460801', '202035944260370441', '202744505114296331'];
 
 var delQueenTxt = false;
 
@@ -59,6 +59,15 @@ client.on('message', async msg => {
         } else {
             delQueenTxt = false;
             msg.reply("Chalo theek hai!");
+        }
+    }
+    
+    if (content === 'modi') {
+        if (msg.author.id=240542597540610048 || msg.author.id=310860262624460801)) {
+            msg.reply("Kya bola be MULLE :dagger:")
+            return
+        } else {
+            msg.reply("Hello Friend :pray_tone2: :) ");
         }
     }
 
@@ -132,7 +141,6 @@ client.on('message', async msg => {
     }
 
     if (content.includes('asli')) {
-        msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'))
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'sadsli'));
     }
 
