@@ -12,7 +12,8 @@ const dota = require('./dota');
 const users = require('./retards.config');
 const ranks = require('./ranks.config');
 const openDotaKey = process.env.OPEN_DOTA_KEY;
-
+const myAvatar = "https://cdn.discordapp.com/avatars/486578152454488065/37d3bd769b74dc4f6c89542a98eba4ad.webp";
+const myName = "Family Friendly Bot";
 const admins = ['240542597540610048', '310860262624460801', '202035944260370441', '202744505114296331'];
 
 var delQueenTxt = false;
@@ -160,6 +161,31 @@ client.on('message', async msg => {
         } else {
             msg.reply('Premium membership required!');
         }
+    }
+
+    if (content.split(" ")[0] === "say") {
+        if (msg.mentions.users.first().id === "240542597540610048") {
+            msg.reply("Sorry, NO!");
+            return;
+        }
+        msg.delete({ timeout: 1000 })
+            .then(m => {
+            })
+            .catch(console.error);
+        msg.guild.members.cache.find(user => user.id === '486578152454488065').setNickname(msg.mentions.users.first().username).then(() => {
+            msg.channel.send(content.substring(content.lastIndexOf(content.split(" ")[2]), content.length)).then(() => {
+                // client.user.setAvatar(myAvatar);
+                msg.guild.members.cache.find(user => user.id === '486578152454488065').setNickname(myName);
+            }).catch(console.error);
+        }).catch(console.error);
+
+        // client.user.setAvatar(msg.mentions.users.first().avatarURL()).then(() => {
+        //     client.user.setUsername(msg.mentions.users.first().username)
+        //     msg.reply(content.substring(content.lastIndexOf(content.split(" ")[2]), content.length)).then(() => {
+        //         client.user.setAvatar(myAvatar);
+        //         client.user.setUsername(myName);
+        //     }).catch(console.error);
+        // }).catch(console.error);
     }
 
     if (content === 'allranks') {
