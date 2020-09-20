@@ -15,6 +15,7 @@ const openDotaKey = process.env.OPEN_DOTA_KEY;
 const myAvatar = "https://cdn.discordapp.com/avatars/486578152454488065/37d3bd769b74dc4f6c89542a98eba4ad.webp";
 const myName = "Family Friendly Bot";
 const admins = ['240542597540610048', '310860262624460801', '202035944260370441', '202744505114296331'];
+const simps = ['./raj.png', './raja.png', './shubham.png'];
 
 var delQueenTxt = false;
 
@@ -195,6 +196,10 @@ client.on('message', async msg => {
             .setTitle('Ranks of Retards')
             .addFields(ranks);
         msg.channel.send(ranksEmbed)
+    }
+
+    if (content === "whosimp") {
+        msg.channel.send({ files: [{ attachment: simps[Math.floor(Math.random() * simps.length)], name: 'simp.png' }] })
     }
 
 });
