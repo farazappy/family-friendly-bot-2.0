@@ -16,6 +16,7 @@ const myAvatar = "https://cdn.discordapp.com/avatars/486578152454488065/37d3bd76
 const myName = "Family Friendly Bot";
 const admins = ['240542597540610048', '310860262624460801', '202035944260370441', '202744505114296331'];
 const simps = ['./raj.png', './raja.png', './shubham.png'];
+const bitchs = ['./raj_bitch.png',];
 
 var delQueenTxt = false;
 
@@ -200,6 +201,10 @@ client.on('message', async msg => {
 
     if (content === "whosimp") {
         msg.channel.send({ files: [{ attachment: simps[Math.floor(Math.random() * simps.length)], name: 'simp.png' }] })
+    }
+
+    if (content === "whobitch") {
+        msg.channel.send({ files: [{ attachment: bitchs[Math.floor(Math.random() * bitchs.length)], name: 'bitch.png' }] })
     }
 
 });
