@@ -99,6 +99,10 @@ client.on('message', async msg => {
         }
     }
 
+    if (content === 'dishakidisha') {
+        msg.reply("O/o CCA Odisha Telecom Circle, 4th Floor, C P M G Building, Bhubaneswar - 751 001, Odisha");
+    }
+
     // if (content === 'ping') {
     //     msg.reply('pong');
     // }
