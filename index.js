@@ -15,6 +15,7 @@ const openDotaKey = process.env.OPEN_DOTA_KEY;
 const myAvatar = "https://cdn.discordapp.com/avatars/486578152454488065/37d3bd769b74dc4f6c89542a98eba4ad.webp";
 const myName = "Family Friendly Bot";
 const admins = ['240542597540610048', '310860262624460801', '202035944260370441', '202744505114296331'];
+const dishas = ['O/o CCA Odisha Telecom Circle, 4th Floor, C P M G Building, Bhubaneswar - 751 001, Odisha', '7C42+W2 Santarapur, Odisha', '597M+W3 Sanapadar, Odisha', '643R+83 Tentuliapalli, Odisha', '858W+88 Padia Bhanga, Odisha'];
 const simps = ['./raj.png', './raja.png', './shubham.png'];
 const bitchs = ['./raj_bitch.png',];
 
@@ -100,7 +101,7 @@ client.on('message', async msg => {
     }
 
     if (content === 'dishakidisha') {
-        msg.reply("O/o CCA Odisha Telecom Circle, 4th Floor, C P M G Building, Bhubaneswar - 751 001, Odisha");
+        msg.reply(dishas[Math.floor(Math.random() * dishas.length)]);
     }
 
     // if (content === 'ping') {
