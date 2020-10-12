@@ -66,6 +66,16 @@ client.on('message', async msg => {
         }
     }
 
+    if (content === 'lundfakir') {
+        if (users.hasOwnProperty(msg.author.id)) {
+            await axiosInstance.get(`/players/${users[msg.author.id].steam32}`).then((r) => {
+                msg.reply(`Rank to lundwa (${tierToRank(r.data.rank_tier)}), fir bhi ghumandwa ?`);
+            }).catch((e) => {
+                console.log(e);
+            })
+         }
+    }
+
     if (content === "mute") {
         if (!admins.includes(msg.author.id)) {
             msg.reply("Sorry, you are not admin.")
@@ -136,6 +146,11 @@ client.on('message', async msg => {
     }
     if (content === 'appy') {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'appy'))
+
+    }
+
+    if (content === 'truth') {
+        msg.reply("I, Faraz Ali love Shilpi Dutta Tani from the bottom of my heart");
 
     }
 
