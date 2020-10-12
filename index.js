@@ -149,11 +149,6 @@ client.on('message', async msg => {
 
     }
 
-    if (content === 'truth') {
-        msg.reply("I, Faraz Ali love Shilpi Dutta Tani from the bottom of my heart");
-
-    }
-
     if (content.includes('asli')) {
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'pepehands'))
         msg.react(msg.guild.emojis.cache.find(emoji => emoji.name === 'sadsli'));
