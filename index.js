@@ -205,7 +205,7 @@ client.on('message', async msg => {
     }
 
     if (content === "gagan") {
-        msg.reply("KHELNA SEEKH NA SARDAR!");
+        msg.reply("KHELNA SEEKH SARDAR!");
     }
 
     if (content === "whosimp") {
