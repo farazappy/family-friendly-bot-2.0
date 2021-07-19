@@ -204,6 +204,10 @@ client.on('message', async msg => {
         msg.channel.send(ranksEmbed)
     }
 
+    if (content === "gagan") {
+        msg.reply("KHELNA SEEKH NA SARDAR!");
+    }
+
     if (content === "whosimp") {
         msg.channel.send({ files: [{ attachment: simps[Math.floor(Math.random() * simps.length)], name: 'simp.png' }] })
     }
